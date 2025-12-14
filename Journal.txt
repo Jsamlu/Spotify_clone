@@ -1,0 +1,33 @@
+assets
+
+
+logos
+spotify, insta, twitter, facebook
+
+home, folder, search, download arrow, bell, group, pined, plus, expand, play(white/green & black), tripple dots, 3-bars, 
+
+play, pause, shuffle, loop, single loop, play forward, play back, mic, queue, conected devices, volume/mute, cast/mutiplayer, full screen, upload
+
+
+page
+
+-general 8 songs
+picked for you + mixes
+-recently played
+-jump back in
+-recomended for today
+-your favroite artists
+-your top mixs
+
+
+
+10 songs 
+10 artists
+
+components 
+
+nav bar 
+
+
+Tackle group based components 
+increase accurecy of icons

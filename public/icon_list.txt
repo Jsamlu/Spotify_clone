@@ -1,0 +1,46 @@
+logos
+ spotify = RiSpotifyFill
+ insta = FaInstagram
+ twitter = FaTwitter
+ face = FaFacebook
+
+
+general icons
+
+home = GoHomeFill
+browse = IoFolderOpen
+seacrh = FiSearch
+download = BsArrowDownCircle
+bell = GoBell
+groups = TbUsersGroup
+pin = TiPin
+plus = FiPlus
+expand = RiExpandDiagonalLine
+play = FaCirclePlay
+dots = BiDotsHorizontalRounded
+bars = FaBars
+doted bars =  AiOutlineBars
+heart = FaHeart
+
+player 
+
+pause = FaCirclePause
+shuffle = RxShuffle
+loop = SlLoop 
+plus add = FiPlusCircle
+
+backward sharp = IoPlaySkipBackSharp
+forward = IoPlaySkipForwardSharp 
+
+mic = TbMicrophone2
+queue = HiOutlineQueueList
+connecd devices = BsPcDisplay
+
+vol high = FaVolumeHigh, 
+vol low = FaVolumeLow 
+mute = FaVolumeXmark 
+
+miniplayer = CgMiniPlayer 
+full = RxEnterFullScreen 
+upload = FiUpload 
+

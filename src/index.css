@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+.sc{
+    overflow-y: auto;
+    scrollbar-width:none;
+    overflow-x: hidden;
+}
+
+.tabs{
+    @apply w-full grow bg-[#121212] rounded-[5px] max-h-[75vh];
+}
+
+.left-sidebar-items{
+    @apply text-white text-sm font-semibold py-1 px-3 bg-[#292929] hover:bg-[#343434] rounded-full text-center cursor-pointer;
+}
+
+
+.mainPageButtons{
+    @apply text-white focus:bg-white focus:text-black hover:bg-[rgba(255,255,255,0.1)] px-3 py-1 rounded-full bg-[rgba(255,255,255,0.15)] text-center ; 
+}
+
+.mainPageFollowingButtons{
+    @apply p-1 px-1 text-white rounded-full; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
