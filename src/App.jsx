@@ -1,6 +1,6 @@
-import LeftSidebar from "./left_side_bar/LeftSideBar";
-import RightSidebar from "./right_side_bar/RightSidebar";
-import Header from "./components/Header";
+import LeftSidebar from "./left_side_bar/LeftSideBar.jsx";
+import RightSidebar from "./right_side_bar/RightSideBar.jsx";
+import Header from "./components/Header.jsx";
 
 import Home from "./home/Home.jsx";
 import MusicPlayer from "./components/musicPlayer/MusicPlayer.jsx";
