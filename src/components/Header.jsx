@@ -9,7 +9,8 @@ import { TbUsersGroup } from "react-icons/tb";
 
 const Header = () => {
   return (
-    <div className="min-h-16 bg-black flex justify-between items-center px-6 py-2">
+    <>
+    <div className="min-h-16 bg-black sm:flex justify-between items-center px-6 py-2 hidden ">
       <logo className="flex items-center flex-1">
         <div>
           <RiSpotifyFill className="text-white text-[2.4rem]" />
@@ -41,6 +42,13 @@ const Header = () => {
         <div className=" rounded-full bg-gray-800 w-10 h-10 -mr-4"></div>
       </others>
     </div>
+    {/* Desktop Header ends here */}
+    {/* Mobile Header */}
+    <div className="min-h-16 bg-black flex justify-between items-center px-6 py-2 sm:hidden ">
+      
+    </div>
+
+    </>
   );
 };
 

@@ -24,6 +24,16 @@ export const artistList = [
 ];
 
 
+export const albumList = [
+    {id:1, title: "The Batman(2022)", image: "/albumCovers/batman.jpg", subtitle: "Michael Giacchino"},
+    {id:2, title: "The Score", image: "/albumCovers/The_Score.jpg" , subtitle: "The Score"},
+    {id:3, title: "Oppenheimer", image: "/albumCovers/can_you_hear_the_music.jpg", subtitle: "Ludwig Göransson"},   
+    {id:4, title: "Man of Steel", image: "/albumCovers/flight.jpg", subtitle: "Hans Zimmer"},
+    {id:5, title: "Michael Jackson", image: "/albumCovers/michael_jackson.jpg", subtitle: "Michael Jackson"},
+    {id:6, title: "My Way of Life", image: "/albumCovers/my_way_of_life.jpg", subtitle: "Frank Sinatra"},
+  
+];
+
 export const nameShortner = (name, limit=10) => {
     if (name.length > limit) {
         return name.substring(0, limit) + "...";

@@ -29,5 +29,5 @@ components
 nav bar 
 
 
-Tackle group based components 
 increase accurecy of icons
+Corousel design using children 

@@ -7,7 +7,7 @@
 }
 
 .tabs{
-    @apply w-full grow bg-[#121212] rounded-[5px] max-h-[75vh];
+    @apply w-full grow bg-[#121212] rounded-[5px] max-h-[79.5vh];
 }
 
 .left-sidebar-items{

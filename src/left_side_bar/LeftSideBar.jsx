@@ -22,24 +22,24 @@ const LeftSideBar = () => {
     <div
       className={`${
         !colapse
-          ? "hidden tabs max-w-72 px-4 py-4 sm:flex flex-col gap-2 sc overflow-x-hidden relative"
-          : "hiddenmax-w-40 px-4 py-4 sm:flex flex-col gap-2 bg-[#121212] overflow-x-hidden relative"
+          ? "hidden tabs max-w-72 px-4 py-4 sm:flex flex-col gap-2 sc overflow-x-hidden relative group/colapse"
+          : " min-w-20 px-4 py-4 sm:flex flex-col gap-2 bg-[#121212] overflow-x-hidden relative group/colapse"
       }`}
     >
       <div
         className={`${
           !colapse
             ? "flex flex-col gap-5 fixed z-50 bg-[#121212] shadow-2xl w-64 pr-7 py-4 -mt-4"
-            : "hidden"
+            : "hidden "
         }`}
       >
         <div className="flex space-x-2 items-center">
-          <div className="flex  gap-1 items-center text-white font-bold">
-            <button onClick={() => setColapse(false)} className="">
+          <button  onClick={() => setColapse(!colapse)} className="flex  gap-1 items-center text-white font-bold flex-1">
+            <div className=" opacity-0 -translate-x-3 group-hover/colapse:flex group-hover/colapse:opacity-100 group-hover/colapse:translate-x-0 transition-all duration-200">
               <IoIosArrowBack />
-            </button>
-            <p>Your Library</p>
-          </div>
+            </div>
+            <p className="-translate-x-4 group-hover/colapse:translate-x-0 transition-all duration-200">Your Library</p>
+          </button>
           <div className="flex gap-1 items-center ">
             <button className="bg-gray-800 p-2 rounded-full">
               <FiPlus className="text-white " />
@@ -113,7 +113,7 @@ const LeftSideBar = () => {
             {/* Start of music list  */}
 
                 <div key={0} className="relative">
-                <div className="flex items-center gap-3 hover:bg-gray-800 px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+                <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
                   <div
                     className="w-14 h-14 bg-gradient-to-br from-indigo-900 via-indigo-400 to-indigo-200  rounded-md"
                   />
@@ -130,16 +130,16 @@ const LeftSideBar = () => {
 
 
             {musicList.map((music) => (
-              <div key={music.id} className="relative">
-                <div className="flex items-center gap-3 hover:bg-gray-800 px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+              <div key={music.id} className="relative group">
+                <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
                   <img
                     src={music.img}
                     alt={music.title}
                     className="w-14 h-14 object-cover rounded-md"
                   />
-                  <div className="w-14 h-14 hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
+                  <div className="w-14 h-14 group-hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
                       {/* Placeholder for play button or other controls */}
-                      <FaPlay className=" hover:text-xl text-transparent hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
+                      <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
                     </div>
                   <div>
                     <p className="text-white font-semibold">{music.title}</p>
@@ -150,16 +150,16 @@ const LeftSideBar = () => {
             ))}
             {
               artistList.map((artist) => (
-                <div key={artist.id} className="relative">
-                  <div className="flex items-center gap-3 hover:bg-gray-800 px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+                <div key={artist.id} className="relative group">
+                  <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
                     <img
                       src={artist.artistImage}
                       alt={artist.artistName}
                       className="w-14 h-14 object-cover rounded-full"
                     />
-                    <div className="w-14 h-14 hover:bg-[rgba(0,0,0,0.3)] absolute rounded-full flex items-center justify-center ">
+                    <div className="w-14 h-14 group-hover:bg-[rgba(0,0,0,0.3)] absolute rounded-full flex items-center justify-center ">
                       {/* Placeholder for play button or other controls */}
-                      <FaPlay className=" hover:text-xl text-transparent hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
+                      <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
                     </div>
                     <div>
                       <p className="text-white font-semibold">{artist.artistName}</p>
