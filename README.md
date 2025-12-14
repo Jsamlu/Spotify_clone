@@ -25,6 +25,3 @@ Tailwind CSS
 🚀 Purpose
 
 This project was created to strengthen frontend development skills, especially in React UI structuring and utility-first CSS design.
-
-
-//typescript-eslint.io) in your project.
