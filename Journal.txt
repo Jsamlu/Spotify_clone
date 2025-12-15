@@ -29,5 +29,13 @@ components
 nav bar 
 
 
-increase accurecy of icons
+
 Corousel design using children 
+add states for all, music and Podcasts
+
+use context api for the current playing songs
+
+make retractable possible for both sides
+add main page sticky absolute header
+
+routes form home for functionality

@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 
 import Home from "./home/Home.jsx";
 import MusicPlayer from "./components/musicPlayer/MusicPlayer.jsx";
+import { Route, Routes } from "react-router-dom";
 
 
 function MainApp() {
@@ -11,7 +12,12 @@ function MainApp() {
 
   return (
     <div className="tabs sm:min-w-4xl mx-auto grow sc">
-      <Home/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+
+        <Route path="*" element={<p>404 Page Not Found</p>} />
+      </Routes>
     </div>
   );
 }

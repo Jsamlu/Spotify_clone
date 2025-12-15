@@ -7,7 +7,7 @@
 }
 
 .tabs{
-    @apply w-full grow bg-[#121212] rounded-[5px] max-h-[79.5vh];
+    @apply w-full grow bg-[#121212] rounded-[5px] max-h-[76.8vh];
 }
 
 .left-sidebar-items{
@@ -16,11 +16,11 @@
 
 
 .mainPageButtons{
-    @apply text-white focus:bg-white focus:text-black hover:bg-[rgba(255,255,255,0.1)] px-3 py-1 rounded-full bg-[rgba(255,255,255,0.15)] text-center ; 
+    @apply text-white focus:bg-white focus:text-black hover:bg-[rgba(255,255,255,0.15)] px-3 py-1 rounded-full bg-[rgba(255,255,255,0.1)] text-center shadow-2xl shadow-[rgb(0,0,0)] cursor-pointer; 
 }
 
 .mainPageFollowingButtons{
-    @apply p-1 px-1 text-white rounded-full; 
+    @apply p-1 px-1 text-white rounded-full cursor-pointer; 
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -29,4 +29,12 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.right-sidebar-header-buttons{
+    @apply hover:text-white text-[rgba(255,255,255,0.3)] text-2xl transition-all duration-150;
+}
+
+.link-style{
+    @apply hover:text-white text-[rgba(255,255,255,0.6)] decoration-1
 }

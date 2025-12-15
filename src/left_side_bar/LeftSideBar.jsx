@@ -2,7 +2,6 @@ import { useState } from "react";
 
 // icons
 import { FiPlus } from "react-icons/fi";
-import { IoIosArrowBack } from "react-icons/io";
 import { RiExpandDiagonalLine } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineBars } from "react-icons/ai";
@@ -10,8 +9,8 @@ import { FaPlay } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
 import { FaHeart } from "react-icons/fa";
 import { TiPin } from "react-icons/ti";
-
-
+import { HiBookmark } from "react-icons/hi";
+import { LuPanelLeftClose } from "react-icons/lu";
 
 import { musicList, artistList, nameShortner } from "../assets/assetList";
 
@@ -22,23 +21,28 @@ const LeftSideBar = () => {
     <div
       className={`${
         !colapse
-          ? "hidden tabs max-w-72 px-4 py-4 sm:flex flex-col gap-2 sc overflow-x-hidden relative group/colapse"
-          : " min-w-20 px-4 py-4 sm:flex flex-col gap-2 bg-[#121212] overflow-x-hidden relative group/colapse"
+          ? "hidden tabs max-w-72 px-4 py-4 sm:flex flex-col gap-2 sc overflow-x-hidden group/colapse"
+          : " min-w-20 px-4 py-4 sm:flex flex-col gap-2 bg-[#121212] overflow-x-hidden group/colapse"
       }`}
     >
       <div
         className={`${
           !colapse
-            ? "flex flex-col gap-5 fixed z-50 bg-[#121212] shadow-2xl w-64 pr-7 py-4 -mt-4"
+            ? "flex flex-col gap-5 absolute z-50 bg-[#121212] shadow-[rgba(0,0,0,0.3)] shadow-2xl w-64 pr-7 py-4 -mt-4"
             : "hidden "
         }`}
       >
         <div className="flex space-x-2 items-center">
-          <button  onClick={() => setColapse(!colapse)} className="flex  gap-1 items-center text-white font-bold flex-1">
-            <div className=" opacity-0 -translate-x-3 group-hover/colapse:flex group-hover/colapse:opacity-100 group-hover/colapse:translate-x-0 transition-all duration-200">
-              <IoIosArrowBack />
+          <button
+            onClick={() => setColapse(!colapse)}
+            className="flex  gap-1 items-center text-white font-bold flex-1"
+          >
+            <div className="text-gray-400 hover:text-white opacity-0 -translate-x-3 group-hover/colapse:flex group-hover/colapse:opacity-100 group-hover/colapse:translate-x-0 transition-all duration-150 text-xl mr-2">
+              <LuPanelLeftClose />
             </div>
-            <p className="-translate-x-4 group-hover/colapse:translate-x-0 transition-all duration-200">Your Library</p>
+            <p className="-translate-x-4 group-hover/colapse:translate-x-0 transition-all duration-150">
+              Your Library
+            </p>
           </button>
           <div className="flex gap-1 items-center ">
             <button className="bg-gray-800 p-2 rounded-full">
@@ -88,8 +92,8 @@ const LeftSideBar = () => {
               <div
                 className={
                   !showSearchBar
-                    ? "hidden opacity-0 transform-x-0"
-                    : "flex rounded-[5px] bg-[#1f1f1f]  opacity-100 transform-x-100 transition-all duration-300"
+                    ? "hidden  "
+                    : "flex rounded-[5px] bg-[#1f1f1f]"
                 }
               >
                 <input
@@ -112,22 +116,24 @@ const LeftSideBar = () => {
           <div className="grid py-3">
             {/* Start of music list  */}
 
-                <div key={0} className="relative">
-                <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
-                  <div
-                    className="w-14 h-14 bg-gradient-to-br from-indigo-900 via-indigo-400 to-indigo-200  rounded-md"
-                  />
-                  <div className="w-14 h-14 hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
-                      {/* Placeholder for play button or other controls */}
-                      <FaHeart className=" text-lg text-white m-3"/>
-                    </div>
-                  <div>
-                    <p className="text-white font-semibold">Liked Songs</p>
-                    <p className="text-gray-400 text-sm font-medium flex items-center"><TiPin className="text-green-400 text-lg"/>Playist<LuDot className="text-center text-xs" />10 Songs</p>
-                  </div>
+            <div key={0} className="relative">
+              <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-900 via-indigo-400 to-indigo-200  rounded-md" />
+                <div className="w-14 h-14 hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
+                  {/* Placeholder for play button or other controls */}
+                  <FaHeart className=" text-lg text-white m-3" />
+                </div>
+                <div>
+                  <p className="text-white font-semibold">Liked Songs</p>
+                  <p className="text-gray-400 text-sm font-medium flex items-center">
+                    <TiPin className="text-green-400 text-lg" />
+                    Playist
+                    <LuDot className="text-center text-xs" />
+                    10 Songs
+                  </p>
                 </div>
               </div>
-
+            </div>
 
             {musicList.map((music) => (
               <div key={music.id} className="relative group">
@@ -138,38 +144,61 @@ const LeftSideBar = () => {
                     className="w-14 h-14 object-cover rounded-md"
                   />
                   <div className="w-14 h-14 group-hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
-                      {/* Placeholder for play button or other controls */}
-                      <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
-                    </div>
+                    {/* Placeholder for play button or other controls */}
+                    <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150" />
+                  </div>
                   <div>
                     <p className="text-white font-semibold">{music.title}</p>
-                    <p className="text-gray-400 text-sm font-medium flex items-center">Playist<LuDot className="text-center text-xs" />{nameShortner(music.artist)}</p>
+                    <p className="text-gray-400 text-sm font-medium flex items-center">
+                      Playist
+                      <LuDot className="text-center text-xs" />
+                      {nameShortner(music.artist)}
+                    </p>
                   </div>
                 </div>
               </div>
             ))}
-            {
-              artistList.map((artist) => (
-                <div key={artist.id} className="relative group">
-                  <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
-                    <img
-                      src={artist.artistImage}
-                      alt={artist.artistName}
-                      className="w-14 h-14 object-cover rounded-full"
-                    />
-                    <div className="w-14 h-14 group-hover:bg-[rgba(0,0,0,0.3)] absolute rounded-full flex items-center justify-center ">
-                      {/* Placeholder for play button or other controls */}
-                      <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150"/>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">{artist.artistName}</p>
-                       <p className="text-gray-400 text-sm font-medium flex items-center">Artist</p>
-                    </div>
+            {artistList.map((artist) => (
+              <div key={artist.id} className="relative group">
+                <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+                  <img
+                    src={artist.artistImage}
+                    alt={artist.artistName}
+                    className="w-14 h-14 object-cover rounded-full"
+                  />
+                  <div className="w-14 h-14 group-hover:bg-[rgba(0,0,0,0.3)] absolute rounded-full flex items-center justify-center ">
+                    {/* Placeholder for play button or other controls */}
+                    <FaPlay className=" group-hover:text-xl text-transparent group-hover:text-white m-3 hover:scale-110 transition-all duration-150" />
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold">
+                      {artist.artistName}
+                    </p>
+                    <p className="text-gray-400 text-sm font-medium flex items-center">
+                      Artist
+                    </p>
                   </div>
                 </div>
-              ))
-            }
+              </div>
+            ))}
           </div>
+          <div key={0} className="relative">
+              <div className="flex items-center gap-3 hover:bg-[rgba(255,255,255,0.1)] px-2 py-2 rounded-lg cursor-pointer overflow-hidden relative">
+                <div className="w-14 h-14 bg-emerald-800  rounded-md" />
+                <div className="w-14 h-14 hover:bg-[rgba(0,0,0,0.3)] absolute rounded-lg flex items-center justify-center ">
+                  {/* Placeholder for play button or other controls */}
+                  <HiBookmark className=" text-3xl text-green-400 m-3" />
+                </div>
+                <div>
+                  <p className="text-white font-semibold">Your Episodes</p>
+                  <p className="text-gray-400 text-sm font-medium flex items-center">
+                    Playist
+                    <LuDot className="text-center text-xs" />
+                    Saved & down...
+                  </p>
+                </div>
+              </div>
+            </div>
         </div>
         {/* End of music list  */}
       </div>

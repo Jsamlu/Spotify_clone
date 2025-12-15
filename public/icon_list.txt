@@ -7,7 +7,7 @@ logos
 
 general icons
 
-home = GoHomeFill
+home = GoHomeFill, GoHome 
 browse = IoFolderOpen
 seacrh = FiSearch
 download = BsArrowDownCircle
@@ -21,6 +21,8 @@ dots = BiDotsHorizontalRounded
 bars = FaBars
 doted bars =  AiOutlineBars
 heart = FaHeart
+
+colapse = LuPanelLeftClose, LuPanelRightClose 
 
 player 
 

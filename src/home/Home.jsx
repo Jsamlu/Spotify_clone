@@ -12,20 +12,21 @@ function Home() {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-red-950 via-[#121212] to-[#121212] p-4 rounded-lg px-10 ">
-        <div className="flex gap-4 items-center">
+      
+      <div className="bg-gradient-to-b from-red-950 via-[#121212] to-[#121212] p-4 rounded-lg px-10">
+        <div className="flex gap-4 items-center bg-transparent z-50 ">
           <button className="mainPageButtons">All</button>
-          <div className="flex items-center gap-1 focus:bg-white rounded-full bg-[rgba(255,255,255,0.15)]">
-            <button className="mainPageButtons">Music</button>
+          <div className="flex items-center gap-1 focus:bg-white rounded-full bg-[rgba(255,255,255,0.1)]">
+            <button className="mainPageButtons  ">Music</button>
             <button className="mainPageFollowingButtons">Following</button>
           </div>
-          <div className="flex items-center gap-1 focus:bg-white rounded-full bg-[rgba(255,255,255,0.15)]">
-            <button className="mainPageButtons">Podcasts</button>
+          <div className="flex items-center gap-1 focus:bg-white rounded-full bg-[rgba(255,255,255,0.1)]">
+            <button className="mainPageButtons ">Podcasts</button>
             <button className="mainPageFollowingButtons">Following</button>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-4 grid-cols-2 gap-x-2 gap-y-0 mt-3">
+        <div className="grid sm:grid-cols-4 grid-cols-2 gap-x-2 gap-y-0 mt-1">
           {/* End of buttons*/}
           {recentMusic.map((music, index) => (
             <>
